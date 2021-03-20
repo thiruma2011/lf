@@ -1,0 +1,173 @@
+[
+ {
+   "Category": "Lost",
+   "Type": "Bag",
+   "Item": "School Bag",
+   "Date": "26-02-21",
+   "Location": "SMRT",
+   "Status": "Claimed",
+   "Remarks": "From Pasir Ris To Bugis"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Wallet",
+   "Item": "Wallet",
+   "Date": "26-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Book",
+   "Item": "School Text bok",
+   "Date": "26-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Electronics",
+   "Item": "Mobile",
+   "Date": "26-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Apparel",
+   "Item": "Jacket",
+   "Date": "27-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Accessories",
+   "Item": "Watch",
+   "Date": "27-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Key",
+   "Item": "Key",
+   "Date": "27-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Opticals",
+   "Item": "Opticals",
+   "Date": "27-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Card",
+   "Item": "ID Card",
+   "Date": "27-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Bag",
+   "Item": "Hand Bag",
+   "Date": "28-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Wallet",
+   "Item": "Wallet",
+   "Date": "28-02-21",
+   "Location": "NUS",
+   "Status": "Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Book",
+   "Item": "Story book",
+   "Date": "28-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Electronics",
+   "Item": "Tablet",
+   "Date": "28-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Apparel",
+   "Item": "Coat",
+   "Date": "28-02-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Accessories",
+   "Item": "Ear Phone",
+   "Date": "01-03-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Electronics",
+   "Item": "Charger",
+   "Date": "01-03-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Opticals",
+   "Item": "Opticals",
+   "Date": "01-03-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Card",
+   "Item": "Credit Card",
+   "Date": "01-03-21",
+   "Location": "NUS",
+   "Status": "Claimed",
+   "Remarks": "Lost in canteen"
+ },
+ {
+   "Category": "Lost",
+   "Type": "Others",
+   "Item": "Water bootle",
+   "Date": "01-03-21",
+   "Location": "NUS",
+   "Status": "Not Claimed",
+   "Remarks": "Lost in canteen"
+ }
+]

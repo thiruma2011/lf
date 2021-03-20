@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Lost and Found - An Iniative by MTech-SE @2021</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- icon menu Menu CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Navigation Menu CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src= "https://code.jquery.com/jquery-3.5.1.js">     </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <div id="navigation"></div>
+    <script>
+        $(function() {
+            $("#navigation").load("index.html");
+        });
+    </script>
+
+
+
+
+    <br>
+
+
+    <br>
+    <br>
+
+<div align=center>
+<input type="search" id="myInput" onsearch="mySearch()">
+<button onclick="mySearch()">Find</button>
+</div>
+
+<br>
+
+<div id="btnContainer">
+  <button class="btn" active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+</div>
+
+
+
+    <script>
+
+        function mySearch() {
+
+            var mytext = document.getElementById("myInput");
+            var mytext = mytext.value.trim();
+            var mytext = mytext.toLowerCase();
+
+            // FETCHING DATA FROM JSON FILE 
+            $.getJSON("lost_item.json",
+                function(data) {
+                    var item = '';
+                    // ITERATING THROUGH OBJECTS 
+                    $.each(data, function(key, value) {
+
+                        var validitem = 0;
+                        if (mytext == null || mytext == '') {
+                            validitem = 1;
+                        }
+
+                        //FILTER THE DATA START
+                        //	var foundtype =  value.Type.search(mytext);
+                        var foundtype = value.Type.toLowerCase().search(mytext);
+                        var founditem = value.Item.toLowerCase().search(mytext);
+                        var foundlocation = value.Location.toLowerCase().search(mytext);
+                        var foundremarks = value.Remarks.toLowerCase().search(mytext);
+
+                        //	if ([value.Type, value.Item,value.Location,value.Remarks].indexOf(x.value) > -1) {
+                        if ((foundtype > -1) || (founditem > -1) || (foundlocation > -1) || (foundremarks > -1)) {
+                            //	if ((foundtype >-1)  || (founditem >-1)) { 
+                            validitem = 1;
+                        }
+                        if (validitem > 0) {
+                            //CONSTRUCTION OF ROWS HAVING 
+                            // DATA FROM JSON OBJECT 
+                            item += '<div class="col-md-3 category-responsive">';
+                            item += '<div class="category-wrap">';
+
+
+                            item += '<div class="category-block">';
+                            itemimage1 = value.Type;
+                            itemimage1 = itemimage1.toLowerCase();
+                            itemimage = 'images/' + itemimage1 + '.png';
+                            item += '<img src="' + itemimage + '" width="75" height="75">';
+
+                            item += '<h5>' + value.Category + ' - ';
+                            if (foundtype > 0) {
+                                item += '<mark>'
+                            }
+                            item += value.Type;
+                            if (foundtype > 0) {
+                                item += '</mark>'
+                            }
+                            item += '</h5>';
+
+                            item += '<h6>';
+                            if (founditem > 0) {
+                                item += '<mark>'
+                            }
+                            item += value.Item;
+                            if (founditem > 0) {
+                                item += '</mark>'
+                            }
+                            item += '</h6>';
+
+                            item += '<h6>';
+                            if (foundlocation > 0) {
+                                item += '<mark>'
+                            }
+                            item += value.Location;
+                            if (foundlocation > 0) {
+                                item += '</mark>'
+                            }
+                            item += '</h6>';
+
+
+                            item += '<h6>' + value.Date + '</h6>';
+                            item += '<h6>';
+                            if (foundremarks > 0) {
+                                item += '<mark>'
+                            }
+                            item += value.Remarks;
+                            if (foundremarks > 0) {
+                                item += '</mark>'
+                            }
+                            item += '</h6>';
+
+                            item += '<h6>' + value.Status + '</h6>';
+                            item += '<i class="fa fa-facebook-square" aria-hidden="true"></i>';
+                            item += '</div>';
+                            item += '</div>';
+                            item += '</div>';
+                        }
+                        //			}
+                        //FILTER THE DATA END
+                    });
+
+                    //INSERTING ROWS INTO TABLE  
+                    document.getElementById("myrow").innerHTML = item;
+                    $("category-block").filter("Bag").css("background-color", "yellow");
+                });
+        }
+    </script>
+
+
+    <h2> View List of Items </h2>
+
+    <div class="container-fluid" id="listitems">
+        <div class="col-sm-12">
+
+
+
+            <div class="row" id="myrow">
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+
+
+<br>
+
+<!--Table Data-->
+<div id="itemtable" style="overflow-x:auto;">
+  <div class="container">
+
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Type</th>
+                    <th>Item Summary</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+
+                </tr>
+            </thead>
+        
+
+            <tbody id="myTable" >
+
+	<script> 
+        function myDataTable() {
+
+  
+                    // FETCHING DATA FROM JSON FILE 
+                    $.getJSON("lost_item.json",  
+                            function (data) { 
+                        var item = ''; 
+  
+                        // ITERATING THROUGH OBJECTS 
+                        $.each(data, function (key, value) { 
+ 				if (value.Type==owner) { 
+                            //CONSTRUCTION OF ROWS HAVING 
+                            // DATA FROM JSON OBJECT 
+                            item += '<tr>'; 
+                            item += '<td>' +  
+                                value.Category + '</td>'; 
+  
+                            item += '<td>' +  
+                                value.Type + '</td>'; 
+  
+                            item += '<td>' +  
+                                value.Item + '</td>'; 
+  
+                          item += '<td>' +  
+                                value.Location + '</td>'; 
+  
+                          item += '<td>' +  
+                                value.Date + '</td>'; 
+  
+                          item += '<td>' +  
+                                value.Status + '</td>'; 
+    
+                          item += '<td>' +  
+                                value.Remarks + '</td>'; 
+    
+                            item += '</tr>'; 
+			}
+                        }); 
+                          
+                        //INSERTING ROWS INTO TABLE  
+                        $('#dataTable').append(item); 
+                    }); 
+		}
+            </script>
+
+           
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Table Data End -->
+
+<script>
+$(document).ready(function(){
+	mySearch();
+	myDataTable();
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+<script>
+var owner;
+$( window ).on( "load", function() {
+function getParameterByName( name,href )
+{
+name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+var regexS = "[\\?&]"+name+"=([^&#]*)";
+var regex = new RegExp( regexS );
+var results = regex.exec( href );
+if( results == null )
+return "";
+else
+return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var url      = window.location.href; 
+$('#myInput').val(getParameterByName("type", url));
+owner=getParameterByName("type", url);
+
+}); 
+
+</script>
+
+
+<script>
+// List View
+function listView() {
+  var x = document.getElementById("listitems");
+  var y = document.getElementById("itemtable");
+
+    y.style.display = "block";
+    x.style.display = "none";
+   setActiewView();
+
+}
+
+// Grid View
+function gridView() {
+
+  var x = document.getElementById("listitems");
+  var y = document.getElementById("itemtable");
+
+
+    x.style.display = "block";
+    y.style.display = "none";
+	setActiewView();
+}
+</script>
+
+<script> 
+function setActiewView() {
+    
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+
+}
+</script>
+
+
+
+
+
+
+ 
+</body>
+
+</html>

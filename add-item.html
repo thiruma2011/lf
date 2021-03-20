@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Lost and Found - An Iniative by MTech-SE @2021</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- icon menu Menu CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Navigation Menu CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src= "https://code.jquery.com/jquery-3.5.1.js">     </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+<style>
+body {
+  font-family: Arial;
+}
+
+input[type=text], select {
+  width: 100%;
+  background-color: white;
+  
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-style: solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input[type=submit] {
+  width: 100%;
+
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+div.container {
+  
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+</style>
+
+</head>
+
+
+
+
+<body>
+
+<div id="navigation"></div>
+<script>
+$(function() {
+    $("#navigation").load("index.html");
+});
+</script>
+
+</head>
+<body>
+
+<br>
+<br>
+<br>
+
+<h2>Add a new Item Lost or Found</h2>
+
+
+<div class="container">
+  <form action="/action_page.php">
+      <label for="category">Category</label>
+    <select id="category" name="category">
+      <option value="itemlost">Item Lost</option>
+      <option value="itemfound">Item Found</option>
+    </select>
+      <label for="type">Type</label>
+    <select id="type" name="type">
+      <option value="bag">Bag</option>
+      <option value="wallet">Wallet</option>
+    </select>
+
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location">
+
+    <label for="summary">Brief Description</label>
+    <input type="text" id="summary" name="summary">
+
+	<label for="itemdate">Date</label>
+	<input type="date" id="itemdate" name="itemdate"><br><br>
+
+	    <label for="remarks">Remarks</label>
+    <input type="text" id="remarks" name="remarks">
+
+ <label for="img">Add Image:</label>
+  <input type="file" id="img" name="img" accept="image/*">
+    <input type="submit" value="Submit">
+ 
+ </form>
+</div>
+
+</body>
+</html>

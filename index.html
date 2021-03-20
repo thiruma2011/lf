@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lost and Found - An Iniative by MTech-SE @2021</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- icon menu Menu CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Navigation Menu CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+ 
+  <script src= "https://code.jquery.com/jquery-3.5.1.js">     </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+
+<a href="index.html"> <img src="images/logo2.gif" data-spai="1" width="100" height="40"> </a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+
+
+    <ul class="nav navbar-nav  ml-auto">
+
+    <li class="nav-item">
+      <a class="nav-link" href="add-item.html"><i class="fa fa-fw fa-plus"></i>
+        Add Item
+
+      </a>
+	</li>  
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="view-items.html"><i class="fa fa-fw fa-eye"></i>
+        View Items
+      </a>
+	</li>	
+
+     <li class="nav-item">
+        <a class="nav-link" href="my-items.html?type=Bag"><i class="fa fa-fw fa-address-card"></i>
+My Items</a>
+      </li>    
+
+ 
+      <li class="nav-item">
+        <a class="nav-link" href="login.html"><i class="fa fa-fw fa-user"></i>
+Login</a>
+      </li>    
+<!--
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-fw fa-eye"></i>
+        View Items
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Accessories</a>
+        <a class="dropdown-item" href="#">Bag</a>
+        <a class="dropdown-item" href="#">Electronics</a>
+    </div>  
+    </li>	
+-->
+
+</ul>
+</nav>
+<br>
+
+<div id="mainpage">
+<br>
+<br>
+<img src="images/logo2.gif" data-spai="1" width="400" height="200">
+<br>
+<h2 align="center">
+Connecting residents of Singapore
+<br>
+Help one another as a community
+<br>
+Portal for Lost and Found Items
+</h2>
+<br>
+<br>
+<h6 align="center">An intiative by NUS-ISS MTech 2021 - Team 8 students</h6>
+
+</div>
+	<script> 
+                $(document).ready(function () { 
+			
+                }); 
+            </script>
+
+
+<script>
+var myurl;
+myurl = window.location.href;
+  var x = document.getElementById("mainpage");
+  var murl1 = myurl.toLowerCase().search("index.html");
+  var murl2 = myurl.toLowerCase().search(".html");
+
+  if ((murl1 > -1) || (murl2 == -1))  {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+</script>
+</body>
+</html>
+
+
